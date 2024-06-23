@@ -1,0 +1,68 @@
+:root {
+}
+
+div {
+  border: 1px red dashed;
+}
+/* LAYOUT */
+#print-section {
+  /*  a4 portrait */
+  width: 210mm;
+  height: 297mm;
+  font-family: Arial, Helvetica, sans-serif;
+}
+td {
+  text-align: center;
+}
+p {
+  margin: 0;
+}
+/* product1kgHops 14ppTemplate */
+.table__labels--14pp {
+  margin-top: 1.51cm;
+  margin-bottom: 0.6cm;
+  margin-left: 0.47cm;
+  margin-right: 0.47cm;
+  border-collapse: separate;
+  border-spacing: 0.25cm 0cm;
+}
+
+.table__labels--14pp > tbody > tr {
+  height: 3.56cm;
+}
+
+.table__labels--14pp > tbody > tr > td {
+  width: 9.91cm;
+}
+/* product50gHops 65pp template */
+.table__labels--65pp {
+  margin-top: 1.09cm;
+  margin-bottom: 0cm;
+  margin-left: 0.47cm;
+  margin-right: 0.47cm;
+  border-collapse: separate;
+  border-spacing: 0.25cm 0cm;
+}
+.table__labels--65pp > tbody > tr {
+  height: 2.12cm;
+}
+.table__labels--65pp > tbody > tr > td {
+  width: 3.83cm;
+  text-align: left;
+  padding-left: 0.1cm;
+}
+
+/* TYPOGRAPHY */
+.product-1kghop {
+  font-size: 18pt;
+  font-weight: bold;
+  padding-bottom: 11pt;
+}
+.alpha-1kghop {
+  font-size: 11pt;
+  font-style: bold;
+}
+.batch-1kghop {
+  font-size: 11pt;
+  font-style: bold;
+}

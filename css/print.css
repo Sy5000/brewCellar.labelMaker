@@ -1,0 +1,23 @@
+/* page settings */
+@page {
+  /* default */
+  size: auto;
+  /* remove headers and footers */
+  margin: 0;
+  padding: 0;
+}
+/* hide all other content */
+body {
+  visibility: hidden;
+}
+/* display a4 sized div */
+#print-section {
+  visibility: visible;
+  position: absolute;
+  left: 0mm;
+  top: 0mm;
+  background-color: #ffffff;
+  color: black;
+}
+
+/* https://www.sitepoint.com/css-printer-friendly-pages/ */
