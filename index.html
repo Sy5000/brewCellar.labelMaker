@@ -54,6 +54,19 @@
           <!-- form -->
           <form class="bg-white p-3 mt-3">
             <div class="form-group">
+              <label for="">Prod description</label>
+              <select
+                class="form-select"
+                id="product-input"
+                aria-label="Default select example"
+              >
+                <option selected>Select Hops</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+            <!-- <div class="form-group">
               <label for="product-input">Product description</label>
               <input
                 type="text"
@@ -61,7 +74,7 @@
                 id="product-input"
                 value="HOPS 1KG"
               />
-            </div>
+            </div> -->
             <div class="form-group">
               <label for="batch-input">Batch</label>
               <input
@@ -110,6 +123,13 @@
   </body>
 </html>
 <script>
+  // Model
+  const productsHops = [
+    "AMARILLO HOPS 1KG",
+    "CASCADE HOPS 1KG",
+    "CENTENNIAL HOPS 1KG",
+  ];
+
   // selectors
   // const pageFormat = document.getElementById("print-section");
   const labelTable = document.getElementById("table-labels");
@@ -185,6 +205,13 @@
     alphaLog.forEach((el) => (el.textContent = alphaInput.value));
   }
 
+  // template load requires log/text areas to be reassigned to vars
+  function reloadLogAreas() {
+    productLog = document.querySelectorAll(".product-log");
+    batchLog = document.querySelectorAll(".batch-log");
+    alphaLog = document.querySelectorAll(".alpha-log");
+  }
+
   function loadTemplate(productRow, rowCount) {
     // clear old table
     labelTable.innerHTML = "";
@@ -197,14 +224,19 @@
     // reload css
   }
 
-  // template load requires log/text areas to be reassigned to vars
-  function reloadLogAreas() {
-    productLog = document.querySelectorAll(".product-log");
-    batchLog = document.querySelectorAll(".batch-log");
-    alphaLog = document.querySelectorAll(".alpha-log");
+  function loadHopSelection() {
+    productInput.innerHTML = "<option selected>Select Hops</option>";
+    productsHops.forEach((el) => {
+      productInput.insertAdjacentHTML(
+        "beforeend",
+        `<option value='${el}'>${el}</option>`
+      );
+    });
   }
 
   function init() {
+    // load prod desciption dropdown
+    loadHopSelection();
     // load default table
     loadTemplate(hop1kgRow, 7);
   }
@@ -227,7 +259,7 @@ bootstrap icons
 ✅ loop data
 ✅  form
 logic 
-drop down 
+✅ drop down 
 - save new products etc
 - edit drop down list menu
 maintain state? 
