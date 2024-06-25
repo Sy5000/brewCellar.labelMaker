@@ -1,5 +1,8 @@
 :root {
 }
+.bg-brand-yellow {
+  background-color: #ffd204;
+}
 
 div {
   border: 1px red dashed;
@@ -19,12 +22,10 @@ p {
 }
 /* product1kgHops 14ppTemplate */
 .table__labels--14pp {
-  margin-top: 1.515cm;
-  /* margin-bottom: 0.6cm; */
-  /* margin-left: 0.475cm;
-  margin-right: 0.475cm; */
+  margin-top: 1.5cm;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 0.5cm;
   border-collapse: separate;
   border-spacing: 0.25cm 0cm;
 }

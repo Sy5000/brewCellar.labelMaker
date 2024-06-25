@@ -5,6 +5,7 @@
   /* remove headers and footers */
   margin: 0;
   padding: 0;
+  overflow: visible;
 }
 /* hide all other content */
 body {
@@ -18,6 +19,7 @@ body {
   top: 0mm;
   background-color: #ffffff;
   color: black;
+  /* scroll bug */
 }
 
 /* https://www.sitepoint.com/css-printer-friendly-pages/ */
