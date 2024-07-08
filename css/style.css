@@ -1,4 +1,4 @@
-:root {
+:root` {
 }
 .bg-brand-yellow {
   background-color: #ffd204;
@@ -19,6 +19,13 @@ td {
 }
 p {
   margin: 0;
+}
+h1 {
+  font-size: 24pt;
+}
+.hide {
+  display: none;
+  /* visibility: hidden; */
 }
 /* product1kgHops 14ppTemplate */
 .table__labels--14pp {
@@ -68,7 +75,17 @@ p {
   font-size: 11pt;
   font-style: bold;
 }
-.batch-1kghop {
+.batch-1kghop,
+.packed-on-grain {
   font-size: 11pt;
   font-style: bold;
+}
+
+.product-grain {
+  font-size: 16pt;
+  font-weight: bold;
+}
+
+.logo-diy {
+  width: 27.5%;
 }

@@ -30,35 +30,54 @@
             src="images/cropped-black-logo-with-yellow-back.gif"
             width="75px"
         /></a>
+        <h1>Label Generator</h1>
       </div>
     </nav>
     <!-- /navbar -->
     <div class="container-fluid">
       <div class="row">
         <div class="col-4 p-5">
-          <h1>Form</h1>
+          <p>1. Template Selection</p>
+          <br />
           <!-- load form butttons -->
           <button
             type="button"
             class="btn btn-outline-secondary btn-sm"
             id="hop-1kg-but"
           >
-            1kg Hops (14)
+            1kg Hops
           </button>
+
           <button
             type="button"
             class="btn btn-outline-secondary btn-sm"
             id="hop-50g-but"
           >
-            50g Hops (65)
+            50g Hops
+          </button>
+
+          <button
+            type="button"
+            class="btn btn-outline-secondary btn-sm"
+            id="diy-grain-but"
+          >
+            diy Grain
+          </button>
+
+          <button
+            type="button"
+            class="btn btn-outline-secondary btn-sm"
+            id="rotm-craft-but"
+          >
+            RotM Craft
           </button>
           <!-- coopers 25g -->
           <!-- /load form butttons -->
 
           <!-- form -->
-          <form class="bg-white p-3 mt-3">
+          <form class="bg-white p-3 mt-3 hide" id="dynamic-form">
             <!-- radio buttons -->
-            <div class="form-check">
+            <div class="form-check hide">
               <input
                 class="form-check-input"
                 type="radio"
@@ -71,26 +90,36 @@
                 >Single Batch</label
               >
             </div>
-
-            <!-- / radio buttons -->
+            <!-- radio option -->
+            <div class="form-check hide">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="updateLabelRange"
+                id="updateHalf"
+                value="updateHalf"
+              />
+              <label class="form-check-label" for="updateHalf"
+                >Additional batch</label
+              >
+            </div>
+            <!-- /radio option -->
 
             <br />
 
             <div class="form-group">
-              <label for="">Prod description</label>
+              <label for="">Prod select</label>
               <select
                 class="form-select"
-                id="product-input"
+                id="hop-select"
                 aria-label="Default select example"
                 checked
               >
                 <option selected>Select Hops</option>
-                <!-- <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option> -->
+                <!-- dynamic options -->
               </select>
             </div>
-            <!-- <div class="form-group">
+            <div class="form-group">
               <label for="product-input">Product description</label>
               <input
                 type="text"
@@ -98,7 +127,7 @@
                 id="product-input"
                 value="HOPS 1KG"
               />
-            </div> -->
+            </div>
             <div class="form-group">
               <label for="batch-input">Batch</label>
               <input
@@ -108,6 +137,7 @@
                 value="BATCH :"
               />
             </div>
+
             <div class="form-group">
               <label for="alpha-input">Alpha</label>
               <input
@@ -131,24 +161,9 @@
               />
             </div>
 
-            <br />
-
-            <!-- radio option -->
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="updateLabelRange"
-                id="updateHalf"
-                value="updateHalf"
-              />
-              <label class="form-check-label" for="updateHalf"
-                >Additional batch</label
-              >
-            </div>
-            <!-- /radio option -->
-            <br />
             <div>
+              <br />
+
               <button
                 type="button"
                 class="btn btn-primary btn-sm"
@@ -160,13 +175,15 @@
           </form>
           <!-- /form -->
         </div>
-        <div class="col-8 p-5">
-          <h1>Labels</h1>
 
+        <!-- SECOND COL  -->
+        <div class="col-8 p-5">
+          <!-- PRINT AREA  -->
           <div class="bg-white border" id="print-section">
             <table id="table-labels" class="table__labels--14pp">
               <!-- dynamic table -->
-              <!-- <tr class="table__row--14pp">
+              <!-- example row 
+               <tr class="table__row--14pp">
                 <td class="border">
                   <p class="product-1kghop product-log">...</p>
                   <p class="batch-1kghop batch-log">batch :</p>
@@ -178,87 +195,12 @@
                   <p class="alpha-1kghop alpha-log">alpha :</p>
                 </td>
               </tr>
-
-              <tr class="table__row--14pp">
-                <td class="border">
-                  <p class="product-1kghop product-log">...</p>
-                  <p class="batch-1kghop batch-log">batch :</p>
-                  <p class="alpha-1kghop alpha-log">alpha :</p>
-                </td>
-                <td class="border">
-                  <p class="product-1kghop product-log">...</p>
-                  <p class="batch-1kghop batch-log">batch :</p>
-                  <p class="alpha-1kghop alpha-log">alpha :</p>
-                </td>
-              </tr>
-
-              <tr class="table__row--14pp">
-                <td class="border">
-                  <p class="product-1kghop product-log">...</p>
-                  <p class="batch-1kghop batch-log">batch :</p>
-                  <p class="alpha-1kghop alpha-log">alpha :</p>
-                </td>
-                <td class="border">
-                  <p class="product-1kghop product-log">...</p>
-                  <p class="batch-1kghop batch-log">batch :</p>
-                  <p class="alpha-1kghop alpha-log">alpha :</p>
-                </td>
-              </tr>
-
-              <tr class="table__row--14pp">
-                <td class="border">
-                  <p class="product-1kghop product-log">...</p>
-                  <p class="batch-1kghop batch-log">batch :</p>
-                  <p class="alpha-1kghop alpha-log">alpha :</p>
-                </td>
-                <td class="border">
-                  <p class="product-1kghop product-log">...</p>
-                  <p class="batch-1kghop batch-log">batch :</p>
-                  <p class="alpha-1kghop alpha-log">alpha :</p>
-                </td>
-              </tr>
-
-              <tr class="table__row--14pp">
-                <td class="border">
-                  <p class="product-1kghop product-log">...</p>
-                  <p class="batch-1kghop batch-log">batch :</p>
-                  <p class="alpha-1kghop alpha-log">alpha :</p>
-                </td>
-                <td class="border">
-                  <p class="product-1kghop product-log">...</p>
-                  <p class="batch-1kghop batch-log">batch :</p>
-                  <p class="alpha-1kghop alpha-log">alpha :</p>
-                </td>
-              </tr>
-
-              <tr class="table__row--14pp">
-                <td class="border">
-                  <p class="product-1kghop product-log">...</p>
-                  <p class="batch-1kghop batch-log">batch :</p>
-                  <p class="alpha-1kghop alpha-log">alpha :</p>
-                </td>
-                <td class="border">
-                  <p class="product-1kghop product-log">...</p>
-                  <p class="batch-1kghop batch-log">batch :</p>
-                  <p class="alpha-1kghop alpha-log">alpha :</p>
-                </td>
-              </tr>
-
-              <tr class="table__row--14pp">
-                <td class="border">
-                  <p class="product-1kghop product-log">...</p>
-                  <p class="batch-1kghop batch-log">batch :</p>
-                  <p class="alpha-1kghop alpha-log">alpha :</p>
-                </td>
-                <td class="border">
-                  <p class="product-1kghop product-log">...</p>
-                  <p class="batch-1kghop batch-log">batch :</p>
-                  <p class="alpha-1kghop alpha-log">alpha :</p>
-                </td>
-              </tr> -->
+              -->
             </table>
           </div>
+          <!-- /print area -->
         </div>
+        <!-- /second col -->
       </div>
     </div>
   </body>
@@ -266,36 +208,49 @@
 <script>
   "use strict";
   // Model
-  const productsHops = [
+  const date = new Date();
+  const day = date.getDate();
+  const month = date.getMonth() + 1;
+  const year = date.getFullYear().toString().substr(-2);
+
+  const today = day + "/" + month + "/" + year;
+
+  const hOptions = [
     "AMARILLO HOPS 1KG",
     "CASCADE HOPS 1KG",
     "CENTENNIAL HOPS 1KG",
+    "CITRA HOPS 1KG",
   ];
 
   let curTemplate = [];
 
   // selectors
-  // const pageFormat = document.getElementById("print-section");
+  const dynamicForm = document.getElementById("dynamic-form");
+  // print areas
+  const printSection = document.getElementById("print-section");
   const labelTable = document.getElementById("table-labels");
-
+  // template buttons
   const hop1kgBut = document.getElementById("hop-1kg-but");
   const hop50gBut = document.getElementById("hop-50g-but");
-
+  const diyGrainBut = document.getElementById("diy-grain-but");
+  const rotmCraftBut = document.getElementById("rotm-craft-but");
+  // user inputs
+  const hopSelect = document.getElementById("hop-select");
   const productInput = document.getElementById("product-input");
   const batchInput = document.getElementById("batch-input");
   const alphaInput = document.getElementById("alpha-input");
-
+  //
   const singleBatch = document.getElementById("updateAll");
   const doubleBatch = document.getElementById("updateHalf");
-
-  let productLog = document.querySelectorAll(".product-log");
+  // log areas / user output
+  let hopLog = document.querySelectorAll(".hop-log");
   let batchLog = document.querySelectorAll(".batch-log");
   let alphaLog = document.querySelectorAll(".alpha-log");
+  let productLog = document.querySelectorAll(".product-log");
+  // refactoring arrays
+  const userInputs = [hopSelect, productInput, batchInput, alphaInput];
 
   // listeners
-  // form fields
-  const userInputs = [productInput, batchInput, alphaInput];
-
   userInputs.forEach((el) => {
     el.addEventListener("input", updateValue);
   });
@@ -303,6 +258,12 @@
   // template load buttons
   // anonymous function required to pass in params
   hop1kgBut.addEventListener("click", () => {
+    // display print preview
+    showElement(printSection);
+    showElement(dynamicForm);
+    // dynamic form
+    hideElements(...userInputs);
+    showElements(hopSelect, batchInput, alphaInput);
     // page formatting - remove old template, insert new
     labelTable.classList = "";
     labelTable.classList.add("table__labels--14pp");
@@ -311,6 +272,12 @@
   });
 
   hop50gBut.addEventListener("click", function () {
+    // display print preview
+    showElement(printSection);
+    showElement(dynamicForm);
+    // dynamic form
+    hideElements(...userInputs);
+    showElements(batchInput, alphaInput);
     // page formatting - remove old, insert new
     labelTable.classList = "";
     labelTable.classList.add("table__labels--65pp");
@@ -318,10 +285,41 @@
     loadTemplate(hop50gRow, 13);
   });
 
+  diyGrainBut.addEventListener("click", function () {
+    // display print preview
+    showElement(printSection);
+    showElement(dynamicForm);
+    // display input fields
+    hideElements(...userInputs);
+    showElements(productInput);
+
+    // page formatting - remove old template, insert new
+    labelTable.classList = "";
+    labelTable.classList.add("table__labels--14pp");
+    // load table rows
+    loadTemplate(grainRow, 7);
+  });
+
+  rotmCraftBut.addEventListener("click", function () {
+    // display print preview
+    showElement(printSection);
+    showElement(dynamicForm);
+    // display input fields
+    hideElements(...userInputs);
+    showElement(productInput);
+    // page formatting - remove old template, insert new
+    labelTable.classList = "";
+    labelTable.classList.add("table__labels--14pp");
+    // load table rows
+    loadTemplate(RotmCraftRow, 7);
+  });
+
   // reset inputs
   updateHalf.addEventListener("click", () => {
     // reset inputs and prompt user
     loadHopSelection();
+
+    // move to function 'resetInputs()'
     batchInput.value = "BATCH : ";
     alphaInput.value = "ALPHA : ";
   });
@@ -331,29 +329,57 @@
   const hop1kgRow =
     "<tr class='table__row--14pp'>" +
     "<td class='border'>" +
-    "<p class='product-1kghop product-log'>...</p>" +
-    "<p class='batch-1kghop batch-log'>batch : </p>" +
-    "<p class='alpha-1kghop alpha-log'>alpha : </p>" +
+    "<p class='product-1kghop hop-log'></p>" +
+    "<p class='batch-1kghop batch-log'></p>" +
+    "<p class='alpha-1kghop alpha-log'></p>" +
     "</td>" +
     "<td class='border'>" +
-    "<p class='product-1kghop product-log'>...</p>" +
-    "<p class='batch-1kghop batch-log'>batch : </p>" +
-    "<p class='alpha-1kghop alpha-log'>alpha : </p>" +
+    "<p class='product-1kghop hop-log'></p>" +
+    "<p class='batch-1kghop batch-log'></p>" +
+    "<p class='alpha-1kghop alpha-log'></p>" +
     "</td>" +
     "</tr>";
   // 65pp hop50g
   const hop50gRow =
     "<tr class='table__row--65pp'>" +
-    "<td class='border'><p class='batch-log'>batch:123</p>" +
-    "<p class='alpha-log'>alpha: qwerty</p></td>" +
-    "<td class='border'><p class='batch-log'>batch:123</p>" +
-    "<p class='alpha-log'>alpha: qwerty</p></td>" +
-    "<td class='border'><p class='batch-log'>batch:123</p>" +
-    "<p class='alpha-log'>alpha: qwerty</p></td>" +
-    "<td class='border'><p class='batch-log'>batch:123</p>" +
-    "<p class='alpha-log'>alpha: qwerty</p></td>" +
-    "<td class='border'><p class='batch-log'>batch:123</p>" +
-    "<p class='alpha-log'>alpha: qwerty</p></td>" +
+    "<td class='border'><p class='batch-log'></p>" +
+    "<p class='alpha-log'></p></td>" +
+    "<td class='border'><p class='batch-log'></p>" +
+    "<p class='alpha-log'></p></td>" +
+    "<td class='border'><p class='batch-log'></p>" +
+    "<p class='alpha-log'></p></td>" +
+    "<td class='border'><p class='batch-log'></p>" +
+    "<p class='alpha-log'></p></td>" +
+    "<td class='border'><p class='batch-log'></p>" +
+    "<p class='alpha-log'></p></td>" +
+    "</tr>";
+  // 14pp diy-grain
+  const grainRow =
+    "<tr class='table__row--14pp'>" +
+    "<td class='border'>" +
+    "<img class='logo-diy' src='images/coopers-diy.png'></span>" +
+    "<p class='product-grain product-log'>Light Crystal Malt 250g</p>" +
+    `<p class='packed-on-grain packed-on-log'> Packed on : ${today} </p>` +
+    "</td>" +
+    "<td class='border'>" +
+    "<img class='logo-diy' src='images/coopers-diy.png'></span>" +
+    "<p class='product-grain product-log'>Light Crystal Malt 250g</p>" +
+    `<p class='packed-on-grain packed-on-log'> Packed on : ${today} </p>` +
+    "</td>" +
+    "</tr>";
+  // 14pp craft-ROTM
+  const RotmCraftRow =
+    "<tr class='table__row--14pp'>" +
+    "<td class='border'>" +
+    "<img class='logo-diy' src='images/coopers-diy.png'></span>" +
+    "<p class='product-grain product-log text-danger' >RED ROCK IPA</p>" +
+    "<p class='packed-on-grain packed-on-log'>CRAFT ROTM</p>" +
+    "</td>" +
+    "<td class='border'>" +
+    "<img class='logo-diy' src='images/coopers-diy.png'></span>" +
+    "<p class='product-grain product-log text-danger'>RED ROCK IPA</p>" +
+    "<p class='packed-on-grain packed-on-log'>CRAFT ROTM</p>" +
+    "</td>" +
     "</tr>";
 
   // handlers
@@ -361,6 +387,7 @@
     // check radio checkbox
     if (singleBatch.checked) {
       // target all stickers
+      hopLog.forEach((el) => (el.textContent = hopSelect.value));
       productLog.forEach((el) => (el.textContent = productInput.value));
       batchLog.forEach((el) => (el.textContent = batchInput.value));
       alphaLog.forEach((el) => (el.textContent = alphaInput.value));
@@ -371,13 +398,17 @@
       middleRow[3].textContent = "";
       // target final x6 stickers
       for (let i = 13; i > 6; i--) {
-        productLog[i].textContent = productInput.value;
+        productLog[i].textContent = productSelect.value;
         batchLog[i].textContent = batchInput.value;
         alphaLog[i].textContent = alphaInput.value;
       }
     }
   }
-  // handler
+
+  // maintain state difficulty???
+  function resetInputs() {}
+  function resetLogs() {}
+
   function loadTemplate(productRow, rowCount) {
     // clear old table
     labelTable.innerHTML = "";
@@ -392,31 +423,59 @@
 
   // template load requires log/text areas to be reassigned to vars
   function reloadLogAreas() {
-    productLog = document.querySelectorAll(".product-log");
+    hopLog = document.querySelectorAll(".hop-log");
     batchLog = document.querySelectorAll(".batch-log");
     alphaLog = document.querySelectorAll(".alpha-log");
+    productLog = document.querySelectorAll(".product-log");
   }
 
   function loadHopSelection() {
-    productInput.innerHTML = "<option selected>Select Hops</option>";
-    productsHops.forEach((el) => {
-      productInput.insertAdjacentHTML(
+    hopSelect.innerHTML = "<option selected>Select Hops</option>";
+    hOptions.forEach((el) => {
+      hopSelect.insertAdjacentHTML(
         "beforeend",
         `<option value='${el}'>${el}</option>`
       );
     });
   }
 
+  // helpers
+
+  // form input elements (..multiple) + labels
+  function showElements(...el) {
+    el.forEach(
+      (element) =>
+        element.classList.remove("hide") +
+        element.previousElementSibling.classList.remove("hide")
+    );
+  }
+  function hideElements(...el) {
+    el.forEach(
+      (element) =>
+        element.classList.add("hide") +
+        // target label for input
+        element.previousElementSibling.classList.add("hide")
+    );
+  }
+  // print preview & form
+  function showElement(el) {
+    el.classList.remove("hide");
+  }
+  function hideElement() {
+    el.classList.add("hide");
+  }
+
   function init() {
+    hideElements(...userInputs);
     // load prod desciption dropdown
     loadHopSelection();
     // load default table
-    loadTemplate(hop1kgRow, 7);
-    curTemplate = "hop1kg";
+    // loadTemplate(hop1kgRow, 7);
+    // curTemplate = "hop1kg";
   }
   init();
 
-  // reset screen position, avoids cutting off section of labels
+  // reset screen position, avoids cutting off section of labels in print
   window.addEventListener("beforeprint", (e) => {
     scrollTo(0, 0);
   });
@@ -442,7 +501,11 @@ logic
 - edit drop down list menu
 maintain state? model
 extra forms / dynamic forms templates 
-lot lookup
+active class on template buttons
+
+dbl batch > to single batch (centre line doesnt come back)
+
+lot lookup - no-cors allowed from requeted url 
 
 OOP - abstract template, save as objects to call when needed
 test browsers
