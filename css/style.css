@@ -1,5 +1,5 @@
-:root` {
-}
+/* :root {
+} */
 .bg-brand-yellow {
   background-color: #ffd204;
 }
@@ -44,6 +44,10 @@ h1 {
 .table__labels--14pp > tbody > tr > td {
   width: 9.91cm;
 }
+.highlight {
+  border: 1px solid #ff8a30;
+}
+
 /* product50gHops 65pp template */
 .table__labels--65pp {
   margin-top: 1.09cm;
